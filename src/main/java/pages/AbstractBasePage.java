@@ -31,14 +31,12 @@ public abstract class AbstractBasePage<T extends AbstractBasePage<T>> extends Lo
         }
     }
 
-    /* check whether the page load is complete */
     @Override
     protected void isLoaded() throws Error {
         String state = (String) ((JavascriptExecutor) driver).executeScript("return document.readyState");
         assert "complete".equalsIgnoreCase(state);
     }
 
-    /* if page not loaded in time or any problem occurred, refresh the page */
     @Override
     protected void load() {
         driver.navigate().refresh();

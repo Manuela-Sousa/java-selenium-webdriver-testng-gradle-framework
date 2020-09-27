@@ -9,13 +9,10 @@ public class DriverFactory {
     private DriverFactory() {
     }
 
-    /**
-     * Create WebDriver Instance
-     */
     public static WebDriver createInstance(String browser) {
 
         WebDriver driver = null;
-        // code for creating Chrome, Firefox or any other driver object
+
         switch (browser) {
 
             case "firefox":
